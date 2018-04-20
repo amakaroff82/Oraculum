@@ -1,0 +1,45 @@
+ {
+    "name": "Oraculum",
+    "description" : "Oraculum Search Extension",
+    "version": "0.015",
+    "manifest_version": 2,
+    "background": {
+      "scripts": [
+        "background.js"
+      ],
+      "persistent": false
+    },
+    "content_scripts": [{
+       "matches":    ["*://*/*"],
+       "js":         [
+         "content.js"
+       ],
+       "css":        [
+         "assets/content.css"
+       ],
+       "all_frames": true
+    }],
+    "web_accessible_resources": [
+      "/oauth2/*",
+      "assets/logo.png",
+      "assets/content.html",
+      "assets/oraculum.html",
+      "assets/content.css"
+    ],
+    "oauth2": {
+     "client_id": "696698952210-gbd3r631335t0pheksem6g1p41edqs34.apps.googleusercontent.com",
+     "scopes": [
+       "https://www.googleapis.com/auth/userinfo.email"
+     ]
+    },
+    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2e6nUVpNfDe8U2sBJ1hEmXKvJ4SqDOfbe+ajzHZRSoEZx38wkXJYwg/Gt1fTY+Ry1O3tzJOCZVNjs5sveGE6Vdf9OP5OS0ApiF36UL61r9f/38zvQbwyEvJia1C+R+2nzHH9Az4Bq96yThmAmSOhV0rxWDjJKkZmU5NntlVjNaTfXsRaYlNgSoIUV7Nhc/HFEPHcEBIlS5Btt11N7KMB4vCduktEnG0YqTLgXwxrjra2GYEV4zDmXzPklZK2ihIteCj+tJoxwU8OUMYSjGM324svPY2AWu7qZN9tv7dVib3J/uNFgp0qMVhyh6V3zyQXa6d3Z8MudAinYOqGYfc7aQIDAQAB",
+    "permissions": [
+      "identity",
+      "storage",
+      "tabs",
+      "*://*/*"
+    ],
+    "browser_action": {
+      "default_icon": "assets/logo1.png"
+    }
+}
